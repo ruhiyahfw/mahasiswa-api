@@ -1,0 +1,8 @@
+1. Install nodejs
+2.  - npm init --> membuat package.json
+    - membuat server.js --> import app
+    - import express di app.js
+3.  - membuat routes
+4.  - install nodemon
+    - install morgan --> untuk melihat log server
+    - install body-parser --> mengambil data di request body

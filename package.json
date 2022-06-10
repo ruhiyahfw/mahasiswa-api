@@ -1,0 +1,28 @@
+{
+  "name": "mahasiswa-api",
+  "version": "1.0.0",
+  "description": "RESTful API sederhana dengan Nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruhiyahfw/mahasiswa-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruhiyahfw/mahasiswa-api/issues"
+  },
+  "homepage": "https://github.com/ruhiyahfw/mahasiswa-api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
