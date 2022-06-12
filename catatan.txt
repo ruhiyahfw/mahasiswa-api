@@ -6,3 +6,10 @@
 4.  - install nodemon
     - install morgan --> untuk melihat log server
     - install body-parser --> mengambil data di request body
+5.  - handle error --> pake middleware
+    - install mysql
+6.  - buat database mahasiswa_api
+    - buat tabel mahasiswa (di sql, tdk pakai sequelize)
+    - npm i mysql
+    - buat config > mysql.js
+7.  - 
