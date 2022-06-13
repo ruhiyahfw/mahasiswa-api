@@ -12,4 +12,13 @@
     - buat tabel mahasiswa (di sql, tdk pakai sequelize)
     - npm i mysql
     - buat config > mysql.js
-7.  - 
+7.  - get pakai query
+8.  - post, put, delete pakai query
+9.  - req.params --> /10001 | /:nim
+    - req.query ---> /search?nim=10001 | /search | ambil nim = req.query.nim
+    - req.body ----> utk create/ update -- pakai body parser
+10. object relational mapping (ORM) dengan sequelize
+    - npm install sequelize mysql2
+    - ubah mysql.js
+    - buat model, controller
+    - ubah routes > mahasiswa
