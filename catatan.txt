@@ -22,3 +22,9 @@
     - ubah mysql.js
     - buat model, controller
     - ubah routes > mahasiswa
+11. - async
+        - akses ke db, akses ke file, atau ajax call
+    - await
+        - menunda eksekusi hingga proses asynchronous selesai
+        - cth di: await model.mahasiswa.findAll(); baris selanjutnya baru akan dijalankan jika findAll() sudah selesai
+    - tambahin controller mahasiswa dg fungsi2 lain

@@ -3,23 +3,103 @@ const controller = {};
 
 controller.getAll = async function(req,res){
     try{
-        await model.mahasiswa.findAll()
-        .then((result) => {
-            if (result.length > 0){
-                res.status(200).json({
-                    message: 'Get method mahasiswa',
-                    data: result
-                })
-            } else{
-                res.status(200).json({
-                    message: 'Tidak ada data',
-                    data: []
-                })
+        let mahasiswa = await model.mahasiswa.findAll()
+        if (mahasiswa.length > 0){
+            res.status(200).json({
+                message: 'Get method mahasiswa',
+                data: mahasiswa
+            })
+        } else{
+            res.status(200).json({
+                message: 'Tidak ada data',
+                data: []
+            })
+        }
+    } catch(error){
+        res.status(404).json({
+            message: error.message
+        })
+    }
+}
+
+controller.getOne = async function(req,res){
+    try{
+        let mahasiswa = await model.mahasiswa.findAll({
+            where:{
+                nim: req.params.nim
             }
+        })
+        if (mahasiswa.length > 0){
+            res.status(200).json({
+                message: `mahasiswa dengan nim ${req.params.nim} ditemukan`,
+                data: mahasiswa
+            })
+        } else{
+            res.status(200).json({
+                message: 'Tidak ada data',
+                data: []
+            })
+        }
+    } catch(error){
+        res.status(404).json({
+            message: error.message
+        })
+    }
+}
+
+controller.post = async function(req,res){
+    try{
+        let mahasiswa = await model.mahasiswa.create({
+            nim: req.body.nim,
+            nama: req.body.nama,
+            jurusan: req.body.jurusan
+        })
+        res.status(201).json({
+            message: `berhasil tambah data mhs`,
+            data: mahasiswa
         })
     } catch(error){
         res.status(404).json({
-            message: error
+            message: error.message
+        })
+    }
+}
+
+controller.put = async function(req,res){
+    try{
+        let mahasiswa = await model.mahasiswa.update({
+            nama: req.body.nama,
+            jurusan: req.body.jurusan
+        }, {
+            where:{
+                nim: req.params.nim,
+            }
+        })
+        res.status(200).json({
+            message: `berhasil ubah data mhs`,
+            data: mahasiswa
+        })
+    } catch(error){
+        res.status(404).json({
+            message: error.message
+        })
+    }
+}
+
+controller.delete = async function(req,res){
+    try{
+        let mahasiswa = await model.mahasiswa.destroy({
+            where:{
+                nim: req.params.nim,
+            }
+        })
+        res.status(200).json({
+            message: `berhasil hapus data mhs`,
+            data: mahasiswa
+        })
+    } catch(error){
+        res.status(404).json({
+            message: error.message
         })
     }
 }
