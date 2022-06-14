@@ -4,7 +4,8 @@ const db = require('../database/mysql')
 var mahasiswa = db.define('mahasiswa',{
     nim: Sequelize.INTEGER,
     nama: Sequelize.STRING,
-    jurusan: Sequelize.STRING
+    jurusan: Sequelize.STRING,
+    angkatan: Sequelize.INTEGER
 },{
     freezeTableName: true,
     timestamps: false

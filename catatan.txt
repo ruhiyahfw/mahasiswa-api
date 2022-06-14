@@ -28,3 +28,10 @@
         - menunda eksekusi hingga proses asynchronous selesai
         - cth di: await model.mahasiswa.findAll(); baris selanjutnya baru akan dijalankan jika findAll() sudah selesai
     - tambahin controller mahasiswa dg fungsi2 lain
+12. - select beberapa atribut saja di sequelize
+    - kasih alias untuk atribut get
+    - where sequelize : const {Op} = require('sequelize')
+        - and, or
+        - between
+    - order by
+    - limit
