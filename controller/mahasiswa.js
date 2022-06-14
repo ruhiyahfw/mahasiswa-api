@@ -68,7 +68,10 @@ controller.getSearch = async function(req,res){
 controller.getOne = async function(req,res){
     try{
         let mahasiswa = await model.mahasiswa.findAll({
-            where:{
+            include: [{
+                model: model.jurusan
+            }]
+            ,where:{
                 nim: req.params.nim
             }
         })
@@ -95,8 +98,9 @@ controller.post = async function(req,res){
         let mahasiswa = await model.mahasiswa.create({
             nim: req.body.nim,
             nama: req.body.nama,
-            jurusan: req.body.jurusan,
-            angkatan: req.body.angkatan
+            kd_jurusan: req.body.kd_jurusan,
+            angkatan: req.body.angkatan,
+            foto: req.file.path
         })
         res.status(201).json({
             message: `berhasil tambah data mhs`,
@@ -113,7 +117,7 @@ controller.put = async function(req,res){
     try{
         let mahasiswa = await model.mahasiswa.update({
             nama: req.body.nama,
-            jurusan: req.body.jurusan
+            kd_jurusan: req.body.kd_jurusan
         }, {
             where:{
                 nim: req.params.nim,

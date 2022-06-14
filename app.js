@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 
 const mahasiswaRoutes = require('./routes/mahasiswa');
 app.use('/mahasiswa', mahasiswaRoutes);
+app.use('/assets', express.static('assets'));
 
 app.use((req, res, next)=> {
     const error = new Error("Tidak ditemukan");

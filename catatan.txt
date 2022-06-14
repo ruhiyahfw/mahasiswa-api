@@ -35,3 +35,12 @@
         - between
     - order by
     - limit
+13. - sequelize join
+    - add table jurusan
+    - tambahkan foreign key di model mhs
+    - oh teryata dia pakai query aja
+14. upload file di nodejs
+    - tambah atribut foto string
+    - npm install multer
+    - tambah kode di routes > mahasiswa
+    - upload foto di post sbg req.file.path
